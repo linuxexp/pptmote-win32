@@ -1,0 +1,86 @@
+/*
+    Copyright (c) Raja Jamwal, <linux1@zoho.com>
+
+    This file is part of PPTMote.
+
+    PPTMote is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    PPTMote is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with PPTMote.  If not, see <http://www.gnu.org/licenses/>.*/
+
+#include <windows.h>
+#include <commctrl.h>
+#include <richedit.h>
+#include "resource.h"
+
+//
+// Dialog resources
+//
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+IDD_APP DIALOG 0, 0, 247, 220
+STYLE DS_3DLOOK | DS_CENTER | DS_CENTERMOUSE | DS_MODALFRAME | DS_SHELLFONT | WS_CAPTION | WS_VISIBLE | WS_GROUP | WS_POPUP | WS_SYSMENU
+CAPTION "PPTMote"
+FONT 8, "Ms Shell Dlg"
+{
+    DEFPUSHBUTTON   "Connect", ID_OK, 187, 200, 55, 17
+    GROUPBOX        "", IDC_STATIC, 4, 2, 239, 53
+    EDITTEXT        IDC_EDIT1, 90, 14, 139, 14, ES_AUTOHSCROLL
+    LTEXT           "Device Name", IDC_STATIC, 19, 17, 44, 8, SS_LEFT
+    LTEXT           "Emulate Key", IDC_STATIC, 20, 35, 40, 8, SS_LEFT
+    COMBOBOX        IDC_COMBO2, 90, 31, 139, 30, WS_VSCROLL | CBS_DROPDOWN | CBS_HASSTRINGS
+    LTEXT           "______________________________________________________________________________________________________", IDC_STATIC, 4294967291, 185, 260, 8, WS_DISABLED | SS_LEFT
+    LTEXT           "(c) Raja Jamwal, Released under GPL", IDC_STATIC, 7, 198, 121, 8, WS_DISABLED | SS_LEFT
+    LTEXT           "http://linuxexperi.wordpress.com/", IDC_STATIC, 7, 208, 107, 8, WS_DISABLED | SS_LEFT
+    EDITTEXT        IDC_EDIT2, 5, 59, 237, 127, ES_AUTOHSCROLL | ES_MULTILINE | ES_WANTRETURN, WS_EX_LEFTSCROLLBAR
+}
+
+
+
+//
+// Icon resources
+//
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+IDI_ICON1          ICON           "..\\..\\pptmote\\pptmote\\icon.ico"
+
+
+
+//
+// Version Information resources
+//
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION     0,1,0,0
+    PRODUCTVERSION  0,1,0,0
+    FILEOS          VOS__WINDOWS32
+    FILETYPE        VFT_DLL
+    FILESUBTYPE     VFT2_UNKNOWN
+    FILEFLAGSMASK   0x0000003F
+    FILEFLAGS       0x00000000
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904E4"
+        {
+            VALUE "CompanyName", "PPTMote"
+            VALUE "FileDescription", "Use BT Device OBEX push as casual remote"
+            VALUE "FileVersion", "0.1.0"
+            VALUE "InternalName", "pptmote.exe"
+            VALUE "LegalCopyright", "Copyright (C) Raja Jamwal <linux1@zoho.com>"
+            VALUE "OriginalFilename", "pptmote.exe"
+            VALUE "ProductName", "PPTMote"
+            VALUE "ProductVersion", "0.1.0"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0409, 0x04E4
+    }
+}
