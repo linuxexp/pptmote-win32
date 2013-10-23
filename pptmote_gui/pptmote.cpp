@@ -111,6 +111,25 @@ BOOL CALLBACK AppDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
                         set_key_code (key);
                     }
                 return TRUE;
+
+				case IDC_CHECKBOX1:
+                    if (HIWORD (wParam) == BN_CLICKED)
+                    {
+                        unsigned int key = SendMessage ((HWND)lParam, BM_GETCHECK, 0, 0);
+						//BST_CHECKED
+						if ( key == BST_CHECKED)
+						{
+							log ("Will send actual data along with file prompt ...\n");
+							set_file_send (TRUE);
+						}
+						else
+						{
+							log ("Only file prompt will be shown ...\n");
+							set_file_send (FALSE);
+						}
+                        
+                    }
+                return TRUE;
             }
         break;
 
